@@ -10,7 +10,7 @@ const Carts = sequelize.define('carts', {
         primaryKey: true
     },
     userId:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         allowNull: false,
         references: {
             model: User,

@@ -10,7 +10,7 @@ const addresses = sequelize.define('addresses', {
         primaryKey: true
     },
     userId: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         allowNull: false, 
         references: {
             model: User,

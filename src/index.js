@@ -4,7 +4,7 @@ const cors = require('cors');
 const db = require('./models');
 const sequelize = db.sequelize;
 
-const router = require('./routes/router');
+const userRouter = require('../src/routes/userRoute/userRoute');
 
 const app = express();
 
@@ -19,26 +19,6 @@ sequelize.authenticate().then(() => {
     console.error('Unable to connect to the database:', err);
 });
 
-// sequelize.authenticate().then((error)=> {
-//     console.log('database success connect')
-// }).catch((error)=> {
-//     console.log('connection error')
-// })
-
-
-// (async () => {
-//   try {
-//     await db.sequelize.authenticate();
-//     console.log('Connection has been established successfully.');
-
-//   } catch (error) {
-//     console.error("Unable to connect to the database:", error);
-//   } finally {
-//     await db.sequelize.close();
-//   }
-// })();
-
-
-app.use('/', router);
+app.use('/user', userRouter)
 
 app.listen(process.env.SERVER_PORT, () => {console.log('Server Running')});
