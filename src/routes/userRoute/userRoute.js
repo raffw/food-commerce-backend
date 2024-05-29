@@ -10,6 +10,6 @@ const router = express.Router();
 router.post('/register',regisValidator, register);
 router.get('/all', allUsers);
 router.post('/login',loginValidator, login)
-router.post('/profile',verify, uploadProfile.single('foto'), uploadProfilePic)
+router.post('/profile', uploadProfile.single('foto'), uploadProfilePic)
 
 module.exports = router;

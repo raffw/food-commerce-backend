@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../config/config');
-const {Order} = require('../order/orders')
+const { sequelize } = require('../../config/config');
+const { Order } = require('../order/orders')
 
 const OrderItem = sequelize.define('OrderItem', {
   id: {
