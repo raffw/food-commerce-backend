@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../config/config');
+const { sequelize } = require('../../config/config');
 
 const categories = sequelize.define('catehories', {
   id: {
@@ -15,12 +15,12 @@ const categories = sequelize.define('catehories', {
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,
-    defaultValue: DataTypes.NOW, 
+    defaultValue: DataTypes.NOW,
   },
   updatedAt: {
     type: DataTypes.DATE,
     allowNull: false,
-    defaultValue: DataTypes.NOW, 
+    defaultValue: DataTypes.NOW,
   },
 }, {
   timestamps: true,

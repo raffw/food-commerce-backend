@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../config/config');
-const {Order} = require('../order/orders')
+const { sequelize } = require('../../config/config');
+const { Order } = require('../order/orders')
 
 const Payment = sequelize.define('Payment', {
   id: {
@@ -12,7 +12,7 @@ const Payment = sequelize.define('Payment', {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
-      model: Order, 
+      model: Order,
       key: 'id',
     },
   },
@@ -31,15 +31,15 @@ const Payment = sequelize.define('Payment', {
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,
-    defaultValue: DataTypes.NOW, 
+    defaultValue: DataTypes.NOW,
   },
   updatedAt: {
     type: DataTypes.DATE,
     allowNull: false,
-    defaultValue: DataTypes.NOW, 
+    defaultValue: DataTypes.NOW,
   },
 }, {
-  timestamps: true, 
+  timestamps: true,
   tableName: 'payments',
 });
 

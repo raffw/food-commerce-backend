@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../../config/config');
-const {v4: UUIDV4} = require('uuid')
+const { sequelize } = require('../../config/config');
+const { v4: UUIDV4 } = require('uuid')
 
 const User = sequelize.define(
   'Users',
@@ -32,12 +32,12 @@ const User = sequelize.define(
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW, 
+      defaultValue: DataTypes.NOW,
     },
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW, 
+      defaultValue: DataTypes.NOW,
     },
   },
   {

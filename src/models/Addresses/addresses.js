@@ -1,9 +1,9 @@
-const {DataTypes} = require('sequelize')
-const sequelize = require('../../config/config')
-const {User} = require('../siteUser/User')
+const { DataTypes } = require('sequelize')
+const { sequelize } = require('../../config/config')
+const { User } = require('../siteUser/User')
 
 const addresses = sequelize.define('addresses', {
-    id:{
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         autoIncrement: true,
@@ -11,7 +11,7 @@ const addresses = sequelize.define('addresses', {
     },
     userId: {
         type: DataTypes.UUID,
-        allowNull: false, 
+        allowNull: false,
         references: {
             model: User,
             key: 'id'
@@ -43,20 +43,20 @@ const addresses = sequelize.define('addresses', {
     createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.NOW, 
-      },
+        defaultValue: DataTypes.NOW,
+    },
     updatedAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.NOW, 
-      },
-},{
+        defaultValue: DataTypes.NOW,
+    },
+}, {
     timestamps: true,
     tableName: 'addresses',
 })
 
 addresses.associate() = (models) => {
-    addresses.hasMany(models.siteUser.users,{
+    addresses.hasMany(models.siteUser.users, {
         foreignKey: 'userId',
         as: 'user'
     });

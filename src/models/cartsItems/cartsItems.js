@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize')
-const sequelize = require('../../config/config')
-const {Carts} = require('../carts/carts')
-const {foods} = require('../foods/foods')
+const { sequelize } = require('../../config/config')
+const { Carts } = require('../carts/carts')
+const { foods } = require('../foods/foods')
 
 const cartItems = sequelize.define('cartItems', {
     id: {
@@ -12,7 +12,7 @@ const cartItems = sequelize.define('cartItems', {
     },
     cartId: {
         type: DataTypes.INTEGER,
-        allowNull: false, 
+        allowNull: false,
         references: {
             model: Carts,
             key: 'id'
@@ -33,14 +33,14 @@ const cartItems = sequelize.define('cartItems', {
     createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.NOW, 
-      },
-      updatedAt: {
+        defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.NOW, 
-      },
-},{
+        defaultValue: DataTypes.NOW,
+    },
+}, {
     timestamps: true,
     tableName: 'cartItems'
 })
